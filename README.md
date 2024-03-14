@@ -1,7 +1,12 @@
 # <p align=center> <a name="top">HydroponicSystem</a></p>  
 
+Project implemented as part of a recruitment task.
+
 ## Description
 
+Application for managing hydroponic systems. Provides CRUD operations for hydroponic systems, performs measurmenets for specific system, displays a list of systems the user owns, and retrieves system information with recent saved measurements. Application has user management: authorization and authentication (token authentication).
+
+The project uses Docker, PostgreSQL database, linters such as Flake8 and Black formatting. The application has also been tested by unit tests (using pytest) and by using Postman.
 
 If you want to check out my other projects [click here.](https://github.com/krzysztofgrabczynski)
 
