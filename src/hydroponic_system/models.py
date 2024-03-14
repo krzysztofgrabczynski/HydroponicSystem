@@ -28,7 +28,9 @@ class Sensors(models.IntegerChoices):
 
 class Measurement(models.Model):
     system = models.ForeignKey(
-        HydroponicSystem, on_delete=models.CASCADE, related_name="measurement_model"
+        HydroponicSystem,
+        on_delete=models.CASCADE,
+        related_name="measurement_model",
     )
     sensor = models.PositiveSmallIntegerField(choices=Sensors.choices)
     value = models.FloatField()

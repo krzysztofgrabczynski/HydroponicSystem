@@ -27,7 +27,13 @@ class HydroponicSystemDetailSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = HydroponicSystem
-        fields = ["owner", "name", "description", "number_of_plants", "measurements"]
+        fields = [
+            "owner",
+            "name",
+            "description",
+            "number_of_plants",
+            "measurements",
+        ]
 
     def get_measurements(self, hydroponic_system: HydroponicSystem) -> list:
         measurements = hydroponic_system.get_measurements()
