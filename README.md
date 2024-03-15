@@ -26,6 +26,7 @@ If you want to check out my other projects [click here.](https://github.com/krzy
 └───src                               # Directory with apps
     ├───hydroponic_system             # Directory with hydroponic system management
     └───user                          # Directory with user management (authorization and authentication)
+├───tests                             # Directory with unit tests
 |
 │   .gitignore
 │   Dockerfile
