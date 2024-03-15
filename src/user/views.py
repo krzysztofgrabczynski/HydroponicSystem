@@ -3,6 +3,7 @@ from rest_framework.authtoken.models import Token
 from rest_framework.response import Response
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate
+from django.http import HttpRequest
 
 from src.user.serializers import UserCreationSerializer, UserLoginSerializer
 
@@ -29,7 +30,7 @@ class LoginView(generics.GenericAPIView):
             {"error": self.error_message}, status=status.HTTP_401_UNAUTHORIZED
         )
 
-    def _create_user_auth_token(self, user):
+    def _create_user_auth_token(self, user: User) -> str:
         token, _ = Token.objects.get_or_create(user=user)
         return token
 
@@ -39,5 +40,5 @@ class LogoutView(views.APIView):
         self._delete_user_auth_token(request)
         return Response(status=status.HTTP_200_OK)
 
-    def _delete_user_auth_token(self, request):
+    def _delete_user_auth_token(self, request: HttpRequest) -> None:
         Token.objects.filter(user=request.user).delete()
