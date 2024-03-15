@@ -10,5 +10,8 @@ flake8 core
 flake8 src
 echo "End of the flake8 raport..."
 
+echo "Start unit tests..."
+pytest
+
 echo "Starting server..."
 python manage.py runserver 0.0.0.0:8000 
