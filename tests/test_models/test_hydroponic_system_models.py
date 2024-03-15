@@ -21,7 +21,7 @@ class TestHydroponicSystemModel(TestCase):
 
     def _create_hydroponic_system(self) -> None:
         HydroponicSystem.objects.create(
-            owner=User.objects.create_user(username="test_usern"),
+            owner=User.objects.create_user(username="test_username"),
             name="test_name",
             description="test_description",
             number_of_plants=5,
