@@ -17,5 +17,6 @@ urlpatterns = [
     path(
         "measurement/",
         hydroponic_system_views.PerformMeasurementView.as_view(),
+        name="measurement",
     ),
 ]
