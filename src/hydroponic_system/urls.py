@@ -6,7 +6,9 @@ from src.hydroponic_system import views as hydroponic_system_views
 
 router = DefaultRouter()
 router.register(
-    r"hydroponic_system", hydroponic_system_views.HydroponicSystemViewSet
+    r"hydroponic_system",
+    hydroponic_system_views.HydroponicSystemViewSet,
+    basename="hydroponic_system",
 )
 
 
