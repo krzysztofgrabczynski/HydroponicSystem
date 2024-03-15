@@ -1,11 +1,10 @@
 from django.test import TestCase
-from django.contrib.auth.models import User
 from rest_framework.test import APIClient
-from rest_framework.authtoken.models import Token
 from django.urls import reverse
+import random
 
 from tests.mixins import LoginUserForTestMixin, create_hydroponic_system
-from src.hydroponic_system.models import HydroponicSystem
+from src.hydroponic_system.models import HydroponicSystem, Sensors, Measurement
 
 
 class TestHydroponicSystemViewSet(LoginUserForTestMixin, TestCase):
@@ -76,3 +75,21 @@ class TestHydroponicSystemViewSet(LoginUserForTestMixin, TestCase):
         )
         self.assertEqual(response.status_code, 204)
         self.assertEqual(HydroponicSystem.objects.count(), 0)
+
+
+class TestMeasurement(LoginUserForTestMixin, TestCase):
+    def test_measurement(self):
+        hydroponic_system = create_hydroponic_system(user=self.test_user)
+
+        url = reverse("measurement")
+        date = {
+            "system": hydroponic_system.pk,
+            "sensor": random.choice(Sensors.values),
+            "value": random.randint(0, 100),
+        }
+
+        response = self.client.post(
+            url, date, HTTP_AUTHORIZATION=self.token_header
+        )
+        self.assertEqual(response.status_code, 201)
+        self.assertEqual(Measurement.objects.count(), 1)
