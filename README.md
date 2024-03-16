@@ -43,12 +43,13 @@ If you want to check out my other projects [click here.](https://github.com/krzy
 │   docker-compose.yml
 │   docker-entrypoint.sh              # Entrypoint file with actions such as migrations, unittesting, etc.
 │   manage.py
+|   pytest.ini
 │   requirements.txt                  # txt file with dependencies
 ```
 
 ## Install for local use (using Docker)
 - Clone the repository
-- Create .env file and add requirement variables such as 'SECRET_KEY' or database parameters
+- Create .env file and add requirement variables such as 'SECRET_KEY', 'DEBUG', 'ALLOWED_HOSTS' and database parameters
 - Build the Docker image using ``` docker-compose build ```
 - Run containers using ``` docker-compose up ```
 - Everything done! 
@@ -58,7 +59,7 @@ If you want to check out my other projects [click here.](https://github.com/krzy
 - Create virtual environment using ``` python -m venv venv ``` in project directory
 - Use ``` . venv/Scripts/activate ``` to activate the virtual environment
 - Install required packages by ``` pip install -r requirements.txt ```
-- Create .env file and add requirement variables such as 'SECRET_KEY' or database parameters
+- Create .env file and add requirement variables such as 'SECRET_KEY', 'DEBUG', 'ALLOWED_HOSTS' and database parameters
 - Enter the ``` python manage.py migrate --run-syncdb ``` to update migrations
 - Now, you can run the application with this: ``` python manage.py runserver ```
 - Everything done! You can open Instagram app in your browser by ctrl + left click on http link in your console
