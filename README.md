@@ -48,14 +48,14 @@ If you want to check out my other projects [click here.](https://github.com/krzy
 ```
 
 ## Install for local use (using Docker)
-- Clone the repository
+- Clone the repository by ```git clone -c core.autocrlf=false https://github.com/krzysztofgrabczynski/HydroponicSystem.git```
 - Create .env file and add requirement variables such as 'SECRET_KEY', 'DEBUG', 'ALLOWED_HOSTS' and database parameters
 - Build the Docker image using ``` docker-compose build ```
 - Run containers using ``` docker-compose up ```
 - Everything done! 
 
 ## Install for local use (using local virtual environment and bash)
-- Clone the repository
+- Clone the repository by ```git clone -c core.autocrlf=false https://github.com/krzysztofgrabczynski/HydroponicSystem.git```
 - Create virtual environment using ``` python -m venv venv ``` in project directory
 - Use ``` . venv/Scripts/activate ``` to activate the virtual environment
 - Install required packages by ``` pip install -r requirements.txt ```
