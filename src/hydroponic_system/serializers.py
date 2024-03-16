@@ -9,6 +9,14 @@ class MeasurementSerializer(serializers.ModelSerializer):
         fields = ["system", "sensor", "value", "date"]
         extra_kwargs = {"date": {"read_only": True}}
 
+    def validate_system(self, system):
+        request = self.context["request"]
+        if request.user.hydroponic_system_model.filter(id=system.id).exists():
+            return system
+        raise serializers.ValidationError(
+            "User does not have a specifc Hydroponic System"
+        )
+
 
 class HydroponicSystemCreationSerializer(serializers.ModelSerializer):
     owner = serializers.HiddenField(default=serializers.CurrentUserDefault())
