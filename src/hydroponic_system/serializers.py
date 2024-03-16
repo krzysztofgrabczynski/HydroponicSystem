@@ -28,6 +28,7 @@ class HydroponicSystemDetailSerializer(serializers.ModelSerializer):
     class Meta:
         model = HydroponicSystem
         fields = [
+            "id",
             "owner",
             "name",
             "description",
@@ -44,4 +45,4 @@ class HydroponicSystemDetailSerializer(serializers.ModelSerializer):
 class HydroponicSystemsListSerializer(serializers.ModelSerializer):
     class Meta:
         model = HydroponicSystem
-        fields = ["name"]
+        fields = ["id", "name"]
