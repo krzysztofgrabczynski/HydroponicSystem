@@ -55,14 +55,15 @@ If you want to check out my other projects [click here.](https://github.com/krzy
 - Everything done! 
 
 ## Install for local use (using local virtual environment and bash)
-- Clone the repository by ```git clone -c core.autocrlf=false https://github.com/krzysztofgrabczynski/HydroponicSystem.git```
+- Clone the repository by ```git clone https://github.com/krzysztofgrabczynski/HydroponicSystem.git```
 - Create virtual environment using ``` python -m venv venv ``` in project directory
 - Use ``` . venv/Scripts/activate ``` to activate the virtual environment
+- Set up PostgreSQL database on your local.
 - Install required packages by ``` pip install -r requirements.txt ```
 - Create .env file and add requirement variables such as 'SECRET_KEY', 'DEBUG', 'ALLOWED_HOSTS' and database parameters
-- Enter the ``` python manage.py migrate --run-syncdb ``` to update migrations
+- Create migrations.
 - Now, you can run the application with this: ``` python manage.py runserver ```
-- Everything done! You can open Instagram app in your browser by ctrl + left click on http link in your console
+- Everything done! You can open HydroponicSystem app in your browser by ctrl + left click on http link in your console
 
  ## How to use that app after installing
 - use Postman application to perform endpoints (recommended)
