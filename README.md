@@ -64,8 +64,7 @@ If you want to check out my other projects [click here.](https://github.com/krzy
 - Everything done! You can open Instagram app in your browser by ctrl + left click on http link in your console
 
  ## How to use that app after installing
--
--
--
+- use Postman application to perform endpoints (recommended)
+- use swagger documentation to perform endpoints (check description above to find endpoint to swagger and how to authorize user)
 
 [Go to top](#top) 
