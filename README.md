@@ -8,6 +8,14 @@ Application for managing hydroponic systems. Provides CRUD operations for hydrop
 
 The project uses Docker, PostgreSQL database, linters such as Flake8 and Black formatting. The application has also been tested by unit tests (using pytest) and by using Postman.
 
+API documentation was created using Swagger and can be found at ```http://localhost:8000/swagger/schema/``` endpoint. 
+To gain access to endpoints requiring authentication: 
+- create a user (```/sign-up/``` endpoint)
+- login the user (```/login/``` endpoint)
+- copy the token visible in the response
+- use the "Authorize" button in the upper right corner and enter: ```Token <copied token>``` and confirm with the authorize button
+- now, you can use all endpoints :)
+
 If you want to check out my other projects [click here.](https://github.com/krzysztofgrabczynski)
 
 ## Tools used in project
@@ -16,7 +24,8 @@ If you want to check out my other projects [click here.](https://github.com/krzy
 <a href="https://www.djangoproject.com/"> <img src="https://cdn.worldvectorlogo.com/logos/django.svg" alt="django" width="60" height="60"/> </a>
 <a href="https://git-scm.com/"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/git/git-original.svg" alt="git" width="60" height="60"/> </a> 
 <a href="https://www.postgresql.org.pl/"> <img src="https://raw.githubusercontent.com/devicons/devicon/55609aa5bd817ff167afce0d965585c92040787a/icons/postgresql/postgresql-original-wordmark.svg" alt="psql" width="60" height="60"/> </a>
-<a href="https://www.docker.com/"> <img src="https://raw.githubusercontent.com/devicons/devicon/55609aa5bd817ff167afce0d965585c92040787a/icons/docker/docker-original-wordmark.svg" alt="docker" width="60" height="60"/> </a></p>
+<a href="https://www.docker.com/"> <img src="https://raw.githubusercontent.com/devicons/devicon/55609aa5bd817ff167afce0d965585c92040787a/icons/docker/docker-original-wordmark.svg" alt="docker" width="60" height="60"/> </a>
+<a href="https://www.docker.com/"> <img src="https://github.com/devicons/devicon/blob/master/icons/swagger/swagger-original.svg" alt="swagger" width="60" height="60"/> </a></p>
 
 
 ## Directory tree
