@@ -1,5 +1,6 @@
 from rest_framework import generics, viewsets
 from rest_framework.permissions import IsAuthenticated
+from django.contrib.auth.models import AnonymousUser
 
 from src.hydroponic_system.models import HydroponicSystem, Measurement
 from src.hydroponic_system.serializers import (
@@ -24,7 +25,9 @@ class HydroponicSystemViewSet(viewsets.ModelViewSet):
         return self.serializer_class
 
     def get_queryset(self):
-        queryset = HydroponicSystem.objects.filter(owner=self.request.user)
+        queryset = super().get_queryset()
+        if not isinstance(self.request.user, AnonymousUser):
+            queryset = queryset.filter(owner=self.request.user)
         return queryset
 
 
